@@ -1,0 +1,70 @@
+{
+  "name": "nx-17-react-interview",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "./src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/nx-17-react-interview"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "nx-17-react-interview:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nx-17-react-interview:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "nx-17-react-interview:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "nx-17-react-interview:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nx-17-react-interview:build:development"
+        },
+        "production": {
+          "buildTarget": "nx-17-react-interview:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "coverage/nx-17-react-interview"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["./src"]
+      }
+    }
+  },
+  "tags": []
+}
