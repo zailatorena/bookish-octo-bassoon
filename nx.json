@@ -39,7 +39,7 @@
     ],
     "sharedGlobals": []
   },
-  "defaultProject": "nx-17-react-interview",
+  "defaultProject": "react-interview",
   "generators": {
     "@nx/react": {
       "application": {

@@ -1,5 +1,5 @@
 {
-  "name": "nx-17-react-interview",
+  "name": "react-interview",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "./src",
   "projectType": "application",
@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/nx-17-react-interview"
+        "outputPath": "dist/react-interview"
       },
       "configurations": {
         "development": {
@@ -24,15 +24,15 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "nx-17-react-interview:build"
+        "buildTarget": "react-interview:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "nx-17-react-interview:build:development",
+          "buildTarget": "react-interview:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "nx-17-react-interview:build:production",
+          "buildTarget": "react-interview:build:production",
           "hmr": false
         }
       }
@@ -41,14 +41,14 @@
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "nx-17-react-interview:build"
+        "buildTarget": "react-interview:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "nx-17-react-interview:build:development"
+          "buildTarget": "react-interview:build:development"
         },
         "production": {
-          "buildTarget": "nx-17-react-interview:build:production"
+          "buildTarget": "react-interview:build:production"
         }
       }
     },
@@ -56,7 +56,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "coverage/nx-17-react-interview"
+        "reportsDirectory": "coverage/react-interview"
       }
     },
     "lint": {

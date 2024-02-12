@@ -25,7 +25,7 @@ export default defineConfig({
   // },
 
   build: {
-    outDir: './dist/nx-17-react-interview',
+    outDir: './dist/react-interview',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -43,7 +43,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: './coverage/nx-17-react-interview',
+      reportsDirectory: './coverage/react-interview',
       provider: 'v8',
     },
   },
