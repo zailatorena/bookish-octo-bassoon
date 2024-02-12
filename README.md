@@ -23,4 +23,10 @@ Start the development server:
 
 Open your browser and navigate to http://localhost:4200/
 
+There are tests that should initially fail. You can run the tests with:
+
+```bash
+  npm exec nx test react-interview
+```
+
 Good luck! 🍀
