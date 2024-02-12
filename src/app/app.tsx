@@ -1,14 +1,22 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
+import { useState } from 'react'
+import './app.css'
+import TodoList from '../TodoList/TodoList'
+import Layout from '../Layout'
 
-import NxWelcome from './nx-welcome';
+function App() {
+  const [items, setItems] = useState(['Buy milk', 'Buy bread'])
 
-export function App() {
   return (
-    <div>
-      <NxWelcome title="nx-17-react-interview" />
-    </div>
-  );
+    <Layout
+      complementary={
+        <p>
+          You have <strong>{items.length}</strong> total tasks.
+        </p>
+      }
+    >
+      <TodoList items={items} setItems={setItems} status="success" />
+    </Layout>
+  )
 }
 
-export default App;
+export default App
