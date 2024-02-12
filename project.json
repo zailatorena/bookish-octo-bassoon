@@ -57,6 +57,11 @@
       "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "coverage/react-interview"
+      },
+      "configurations": {
+        "watch": {
+          "watch": true
+        }
       }
     },
     "lint": {
