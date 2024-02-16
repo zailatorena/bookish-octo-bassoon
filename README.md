@@ -17,8 +17,8 @@ Install dependencies:
 
 Start the development server:
 
-```
-  npm exec nx serve react-interview
+```bash
+  npx nx run react-interview:serve
 ```
 
 Open your browser and navigate to http://localhost:4200/
@@ -26,7 +26,7 @@ Open your browser and navigate to http://localhost:4200/
 There are tests that should initially fail. You can run the tests with:
 
 ```bash
-  npm exec nx test react-interview
+  npx nx run react-interview:test --configuration=watch
 ```
 
 Good luck! 🍀
