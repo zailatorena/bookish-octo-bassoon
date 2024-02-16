@@ -5,7 +5,7 @@
 Clone the repository and navigate to the root folder:
 
 ```bash
-git clone https://github.com/myadbox/react-interview-test.git
+git clone https://github.com/joeldbirch/bookish-octo-bassoon.git
 cd react-interview-test
 ```
 
