@@ -23,6 +23,10 @@ Start the development server:
 
 Open your browser and navigate to http://localhost:4200/
 
+Open TodoList component in `src/TodoList/TodoList.tsx` and read the comments to understand the requirements.
+
+## Running tests
+
 There are tests that should initially fail. You can run the tests with:
 
 ```bash
