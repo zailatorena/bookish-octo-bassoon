@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { useAppContext } from '../context/AppContextProvider'
 
 const TodoList = () => {
-  const [items, setItems] = useState(['Buy milk', 'Buy bread'])
+  const appContext = useAppContext()
+  const [newTask, setNewTask] = useState<string>('')
 
-  // The list should contain 3 tasks after the component mounts. Two tasks are hardcoded in the initial state (above) and the third task is added via the useEffect hook.
-  useEffect(() => {
-    setItems(['Some other task'])
-  })
+  const onInputChange = (value: string) => {
+    setNewTask(value)
+  }
 
   // When the user clicks the "Add Task" link, a new (hardcoded) task should be added to the list.
   const handleClick = () => {
-    items.push('Brush teeth')
-    setItems(items)
+    if (appContext?.addItems) appContext?.addItems(newTask)
   }
 
   // Next, allow custom tasks to be added via an input field
@@ -19,10 +19,18 @@ const TodoList = () => {
 
   return (
     <div>
-      <a onClick={handleClick}>Add Task</a>
+      <input
+        onChange={(e) => onInputChange(e.target.value)}
+        value={newTask}
+        style={{ border: '1px solid black', display: 'block' }}
+        placeholder="new task"
+      />
+      <button onClick={() => handleClick()}>Add Task</button>
       <ul>
-        {items.map((item) => (
-          <li>{item}</li>
+        {appContext?.items.map((item) => (
+          <li>
+            <div>{item.value}</div>: <div>{item.status}</div>
+          </li>
         ))}
       </ul>
     </div>

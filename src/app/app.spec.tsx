@@ -2,12 +2,17 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import App from './App'
+import { AppContextProvider } from '../context/AppContextProvider'
 
 vi.mock(`../Layout`)
 
 describe('App', () => {
   it(`renders the initial list of tasks`, () => {
-    render(<App />)
+    render(
+      <AppContextProvider>
+        <App />
+      </AppContextProvider>
+    )
     expect(screen.getByText(/Buy milk/i)).toBeTruthy()
     expect(screen.getByText(/Buy bread/i)).toBeTruthy()
   })
@@ -16,7 +21,11 @@ describe('App', () => {
     const user = userEvent.setup()
     const newTask = `Brush teeth`
 
-    render(<App />)
+    render(
+      <AppContextProvider>
+        <App />
+      </AppContextProvider>
+    )
 
     const button = screen.getByText(/Add Task/i)
     const input = screen.getByPlaceholderText(/new task/i)
@@ -29,7 +38,11 @@ describe('App', () => {
   it(`tracks the total number of tasks in the footer`, async () => {
     const user = userEvent.setup()
 
-    render(<App />)
+    render(
+      <AppContextProvider>
+        <App />
+      </AppContextProvider>
+    )
 
     const aside = screen.getByRole(`complementary`)
     const button = screen.getByText(/Add Task/i)
