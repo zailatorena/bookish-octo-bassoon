@@ -29,7 +29,7 @@ const TodoList = () => {
       <ul>
         {appContext?.items.map((item) => (
           <li>
-            <div>{item.value}</div>: <div>{item.status}</div>
+            <span>{item.value}</span>: <span>{item.status}</span>
           </li>
         ))}
       </ul>
